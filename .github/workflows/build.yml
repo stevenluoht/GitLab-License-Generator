@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
+      - name: Make scripts executable
+        run: |
+          chmod +x make.sh
+          chmod +x src/scan.features.rb
+          chmod +x src/generator.license.rb        
       - name: Build
         run: |
           ./make.sh
